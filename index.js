@@ -1,13 +1,18 @@
-const express = require('express');
-const app = express();
-const PORT = 3000;
-//THIS PARSES JSON  REQUEST BODIES
+const express=require('express');
+const apiRoutes=require('./routes');
+
+const app=express();
+const PORT=3000;
+// THE FOLLING ARE MIDDLEWARE TO PARSE json PAYLOADS
 app.use(express.json());
-//THIS TESTS THE ROUTE
-app.get('/', (req, res) => {
-  res.send('Express server is successfully running!');
+//mount the backend domain API routes
+app.use('/api',apiRoutes);
+//this catches all route fallback
+app.use((req,res)=>{
+  res.status(404).json({success: false, message: "Endpoint configuration not found."});
 });
-//THIS IS WHERE IT STARTS LISTENING FOR THE REQUESTS
-app.listen(PORT, () => {
-  console.log(`Server is live on http://localhost:${PORT}`);
+app.listen(PORT,()=>{
+  console.log('=======================');
+  console.log(`Restaurant Management System running on Port ${PORT}`);
+  console.log('=======================');
 });

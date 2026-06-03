@@ -1,7 +1,7 @@
 const menuItems=[
-  {id: "1", name: "Gourmet Burger", price: 12.99, stockQuality: 10},
-  {id: "2", name: "Truffle Fries", price: 5.50, stockQuality: 3},
-  {id: "3", name: "Margherita Pizza", price: 14.00, stockQuality: 15}
+  {id: "1", name: "Gourmet Burger", price: 12.99, stockQuantity: 10},
+  {id: "2", name: "Truffle Fries", price: 5.50, stockQuantity: 3},
+  {id: "3", name: "Margherita Pizza", price: 14.00, stockQuantity: 15}
 
 ];
 
